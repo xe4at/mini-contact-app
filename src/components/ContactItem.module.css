@@ -1,41 +1,60 @@
 .item{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #f5f5f5;
-    color: #6b6b6f;
-    padding: 10px 20px;
-    margin: 15px;
-    border-radius: 10px;
+    background-color: #1e1e2f;
+    color: #e1e1ff;
+    padding: 15px 25px;
+    margin: 15px 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
 }
 
-.item p{
-    flex-basis: 0;
-    flex-grow: 1;
+.details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
 }
 
-.item span{
-    display: inline-block;
-    font-size: 1.3rem;
-    text-align: center;
-    margin-right: 10px;
-    background-color: #fff;
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 50%;
+.details span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 10px;
 }
 
 .item button{
-    width: 35px;
-    height: 35px;
-    background-color: #fff;
+    width: 40px;
+    height: 40px;
+    background-color: #70a1ff;
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    transition: .1s all ease-in-out;
+    transition: background-color 0.3s, font-size 0.3s;
 }
 
 .item button:hover{
-    font-size: 1.5rem;
+    background-color: #1e90ff;
+    font-size: 1.6rem;
+}
+
+@media (min-width: 768px) {
+    .item {
+        flex-direction: row;
+    }
+    
+    .details {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .details span {
+        flex: 1;
+        margin-bottom: 0;
+    }
 }
